@@ -89,7 +89,7 @@ def get_podcast_summary(podcast_transcript):
   """
 
     request = instruct_prompt + podcast_transcript
-    chat_output = openai.ChatCompletion.create(model="gpt-3.5-turbo-16k",
+    chat_output = openai.ChatCompletion.create(model="gpt-3.5-turbo-16k-0613",
                                                messages=[{"role": "system", "content": "You are a helpful assistant."},
                                                          {"role": "user", "content": request}
                                                          ]
@@ -111,7 +111,7 @@ def get_podcast_guest(podcast_transcript):
 
     request = instruct_prompt + podcast_transcript
     chat_output = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-3.5-turbo-16k-0613",
         messages=[{"role": "user", "content": request}],
         functions=[
             {
@@ -155,7 +155,7 @@ def get_podcast_highlights(podcast_transcript):
     """
 
     request = instructPrompt + podcast_transcript
-    chat_output = openai.ChatCompletion.create(model="gpt-3.5-turbo-16k",
+    chat_output = openai.ChatCompletion.create(model="gpt-3.5-turbo-16k-0613",
                                                messages=[{"role": "system", "content": "You are a helpful assistant."},
                                                          {"role": "user", "content": request}
                                                          ]
